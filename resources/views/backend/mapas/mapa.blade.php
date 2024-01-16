@@ -98,11 +98,11 @@
                     // surprise users. Also some browsers will block audio
                     // until there have been interactions.
                     
-                    click: function () {
+                    /* click: function () {
 
                         document.location = '/universidades';
 
-                    }
+                    } */
                 }
             },
 

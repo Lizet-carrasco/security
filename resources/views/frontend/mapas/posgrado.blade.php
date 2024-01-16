@@ -207,11 +207,11 @@
                     // surprise users. Also some browsers will block audio
                     // until there have been interactions.
                     
-                    click: function () {
+                    /* click: function () {
 
                         document.location = '/universidades';
 
-                    }
+                    } */
                 }
             },
 
@@ -305,7 +305,7 @@
                                 <ul>
                                     @foreach($universidades_ayacucho as $hu)
                                     <li style="font-size: 10px !important;">
-                                        <a href="{{$hu->enlace_plan}}" target="_blank">{{$hu->nombre}}</a>
+                                    <a href="/escuelas_frontend/{{$hu->escuela_id}}" target="_blank">{{$hu->nombre}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -320,7 +320,8 @@
                                 <ul>
                                     @foreach($universidades_huanuco as $hu)
                                     <li style="font-size: 10px !important;">
-                                        <a href="{{$hu->enlace_plan}}" target="_blank">{{$hu->nombre}}</a>
+                                   
+                                        <a href="/escuelas_frontend/{{$hu->escuela_id}}" target="_blank">{{$hu->nombre}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -335,7 +336,7 @@
                                 <ul>
                                     @foreach($universidades_pasco as $pa)
                                     <li style="font-size: 10px !important;">
-                                        <a href="{{$pa->enlace_plan}}" target="_blank">{{$pa->nombre}}</a>
+                                    <a href="/escuelas_frontend/{{$pa->escuela_id}}" target="_blank">{{$pa->nombre}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -350,7 +351,7 @@
                                 <ul>
                                     @foreach($universidades_junin as $ju)
                                     <li style="font-size: 10px !important;">
-                                        <a href="{{$ju->enlace_plan}}" target="_blank">{{$ju->nombre}}</a>
+                                    <a href="/escuelas_frontend/{{$ju->escuela_id}}" target="_blank">{{$ju->nombre}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -366,7 +367,7 @@
                                 <ul>
                                     @foreach($universidades_huancavelica as $hua)
                                     <li style="font-size: 10px !important;">
-                                        <a href="{{$hua->enlace_plan}}" target="_blank">{{$hua->nombre}}</a>
+                                    <a href="/escuelas_frontend/{{$hua->escuela_id}}" target="_blank">{{$hua->nombre}}</a>
                                     </li>
                                     @endforeach
                                 </ul>

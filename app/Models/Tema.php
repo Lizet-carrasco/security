@@ -43,11 +43,13 @@ class Tema extends Model
             ->join('temas','planes_posgrados.tema_id','=','temas.id')
             ->join('posgrados','planes_posgrados.posgrado_id','=','posgrados.id')
             ->join('universidades','posgrados.universidad_id','=','universidades.id')            
+            ->join('facultades','universidades.id','=','facultades.universidad_id')    
+            ->join('escuelas','facultades.id','=','escuelas.facultad_id')    
             ->where('planes_posgrados.estado','=',1)
             ->where('planes_posgrados.tema_id','=',$tema_id)
             ->where('posgrados.tipo','=',$tipo)
             ->where('universidades.departamento','=',$departamento)
-            ->select('universidades.*','planes_posgrados.enlace_plan')
+            ->select('universidades.*','planes_posgrados.enlace_plan','escuelas.id as escuela_id','escuelas.nombre as escuela_nombre')
             ->get();
         return $datos;
     }
@@ -79,7 +81,7 @@ class Tema extends Model
             ->where('planes_pregrados.estado','=',1)
             ->where('planes_pregrados.tema_id','=',$tema_id)
             ->where('universidades.departamento','=',"AYACUCHO")
-            ->select('universidades.*','planes_pregrados.enlace_plan')
+            ->select('universidades.*','planes_pregrados.enlace_plan','escuelas.id as escuela_id')
             ->get();
         return $datos;
     }
@@ -109,7 +111,7 @@ class Tema extends Model
             ->where('planes_pregrados.estado','=',1)
             ->where('planes_pregrados.tema_id','=',$tema_id)
             ->where('universidades.departamento','=',"HUÁNUCO")
-            ->select('universidades.*','planes_pregrados.enlace_plan')
+            ->select('universidades.*','planes_pregrados.enlace_plan','escuelas.id as escuela_id')
             ->get();
         return $datos;
     }
@@ -139,7 +141,7 @@ class Tema extends Model
             ->where('planes_pregrados.estado','=',1)
             ->where('planes_pregrados.tema_id','=',$tema_id)
             ->where('universidades.departamento','=',"JUNIN")
-            ->select('universidades.*','planes_pregrados.enlace_plan')
+            ->select('universidades.*','planes_pregrados.enlace_plan','escuelas.id as escuela_id')
             ->get();
         return $datos;
     }
@@ -168,7 +170,7 @@ class Tema extends Model
             ->where('planes_pregrados.estado','=',1)
             ->where('planes_pregrados.tema_id','=',$tema_id)
             ->where('universidades.departamento','=',"PASCO")
-            ->select('universidades.*','planes_pregrados.enlace_plan')
+            ->select('universidades.*','planes_pregrados.enlace_plan','escuelas.id as escuela_id')
             ->get();
         return $datos;
     }
@@ -199,7 +201,7 @@ class Tema extends Model
             ->where('planes_pregrados.estado','=',1)
             ->where('planes_pregrados.tema_id','=',$tema_id)
             ->where('universidades.departamento','=',"HUANCAVELICA")
-            ->select('universidades.*','planes_pregrados.enlace_plan')
+            ->select('universidades.*','planes_pregrados.enlace_plan','escuelas.id as escuela_id', 'escuelas.nombre as escuela_nombre')
             ->get();
         return $datos;
     }
