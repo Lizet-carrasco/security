@@ -16,7 +16,31 @@
 </style>
 
 <script>
-    new DataTable('#example');
+ var table = new DataTable('#example', {
+    "aoColumns": [
+        { "sWidth": "2%" },
+        { "sWidth": "10%" }, 
+        { "sWidth": "10%" },
+        { "sWidth": "20%" },
+        { "sWidth": "10%" },
+        { "sWidth": "5%" }, 
+    ],
+    // Otras configuraciones y opciones de DataTable
+});
+
+// Obtiene los datos de la quinta columna
+var dataColumn5 = table.column(5).data();
+
+// Modifica los datos eliminando los puntos y comas
+table.rows().every(function() {
+    var data = this.data();
+    data[5] = data[5].replace(/;/g, ''); // Reemplaza todos los puntos y comas por ""
+    this.data(data);
+});
+
+// Redibuja la DataTable con los datos modificados
+table.draw();
+
 </script>
 @endsection
 

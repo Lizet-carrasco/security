@@ -37,7 +37,8 @@ class MapaController extends Controller
 
     public function buscar_tema_frontend (Request $request){
 
-       // var_dump($request->tema_id); exit;
+       var_dump($request->tema_id); exit;
+       
         if($request->tipo_nivel==1){
             $model = new Tema();
             $ayacuchoPregrado=$model->AyacuchoPregrado($request->tema_id);

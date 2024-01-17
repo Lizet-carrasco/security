@@ -283,9 +283,9 @@
                             <div><b>Ayacucho({{$ayacuchoPregrado}}):</b></div>
                             <div>
                                 <ul>
-                                    @foreach($universidades_ayacucho as $hu)
+                                    @foreach($universidades_ayacucho as $ay)
                                     <li style="font-size: 10px !important;">
-                                    <a href="/escuelas_frontend/{{$hu->escuela_id}}" target="_blank">{{$hu->nombre}}</a>
+                                    <a href="/escuelas_frontend/{{$ay->escuela_id}}" target="_blank">{{$ay->nombre}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -312,11 +312,15 @@
                         <div>
                             <div><b>Pasco ({{$pascoPregrado}}):</b></div>
                             <div>
+                            
                                 <ul>
                                     @foreach($universidades_pasco as $pa)
                                     <li style="font-size: 10px !important;">
                                     <a href="/escuelas_frontend/{{$pa->escuela_id}}" target="_blank">{{$pa->nombre}}</a>
                                     </li>
+
+                                    
+
                                     @endforeach
                                 </ul>
                             </div>
